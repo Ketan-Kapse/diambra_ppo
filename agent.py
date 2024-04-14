@@ -6,11 +6,6 @@ from diambra.arena import Roles, SpaceTypes, load_settings_flat_dict
 from diambra.arena.stable_baselines3.make_sb3_env import make_sb3_env, EnvironmentSettings, WrappersSettings
 from stable_baselines3 import PPO
 
-"""This is an example agent based on stable baselines 3.
-
-Usage:
-diambra run python stable_baselines3/agent.py --cfgFile $PWD/stable_baselines3/cfg_files/doapp/sr6_128x4_das_nc.yaml --trainedModel "model_name"
-"""
 
 def main(cfg_file, trained_model, test=True):
     # Read the cfg file
@@ -22,7 +17,8 @@ def main(cfg_file, trained_model, test=True):
     base_path = os.path.dirname(os.path.abspath(__file__))
     model_folder = os.path.join(base_path, params["folders"]["parent_dir"], params["settings"]["game_id"],
                                 params["folders"]["model_name"], "model")
-
+    print(base_path)
+    print(model_folder)
     # Settings
     params["settings"]["action_space"] = SpaceTypes.DISCRETE if params["settings"]["action_space"] == "discrete" else SpaceTypes.MULTI_DISCRETE
     settings = load_settings_flat_dict(EnvironmentSettings, params["settings"])
@@ -64,9 +60,9 @@ def main(cfg_file, trained_model, test=True):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--cfgFile", type=str, required=True, help="Configuration file")
-    parser.add_argument("--trainedModel", type=str, default="model", help="Model checkpoint")
+    parser.add_argument("--cfgFile", type=str, default = 'config.yaml',required=True, help="Configuration file")
+    parser.add_argument("--trainedModel", type=str, default="models.zip", help="Model checkpoint")
     parser.add_argument("--test", type=int, default=0, help="Test mode")
     opt = parser.parse_args()
     print(opt)
-    main('config.yaml', 'models.zip', True)
+    main(opt.cfgFile, opt.trainedModel, bool(opt.test))
