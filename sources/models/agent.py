@@ -11,6 +11,7 @@ def main(cfg_file, trained_model, test=True):
     print("Configuration file:", cfg_file)
     print("Trained model:", trained_model)
     print("Test mode:", test)
+
     # Read the cfg file
     yaml_file = open(cfg_file)
     params = yaml.load(yaml_file, Loader=yaml.FullLoader)
@@ -18,6 +19,7 @@ def main(cfg_file, trained_model, test=True):
     yaml_file.close()
 
     base_path = os.path.dirname(os.path.abspath(__file__))
+    print(os.listdir())
     model_folder = os.path.join(base_path, params["folders"]["parent_dir"], params["settings"]["game_id"],
                                 params["folders"]["model_name"], "model")
     print(base_path)
