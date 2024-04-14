@@ -8,9 +8,6 @@ from stable_baselines3 import PPO
 
 
 def main(cfg_file, trained_model, test=True):
-    print("Configuration file:", cfg_file)
-    print("Trained model:", trained_model)
-    print("Test mode:", test)
 
     # Read the cfg file
     yaml_file = open(cfg_file)
