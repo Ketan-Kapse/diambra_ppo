@@ -20,7 +20,7 @@ wrappers_settings:
   stack_frames: 4
   dilation: 1
   add_last_action: true
-  stack_actions: 12
+  stack_actions: 3
   scale: false
   exclude_image_scaling: true
   role_relative: true
