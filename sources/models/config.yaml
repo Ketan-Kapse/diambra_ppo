@@ -1,6 +1,6 @@
 folders:
   parent_dir: "./"
-  model_name: "models.zip"
+  model_name: "models"
 
 settings:
   game_id: "doapp"
