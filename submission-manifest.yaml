@@ -1,0 +1,11 @@
+mode: AIvsCOM
+image: diambra/arena-stable-baselines3-on3.10-bullseye:main
+command:
+  - python
+  - "/sources/agent.py"
+  - "--cfgFile"
+  - "/sources/config.yaml"
+  - "--trainedmodel"
+  - "/sources/models.zip"
+sources:
+  .: git+https://Ketan-Kapse:{{.Secrets.token}}@github.com/Ketan-Kapse/diambra_ppo.git#ref=main

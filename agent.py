@@ -7,7 +7,7 @@ from diambra.arena.stable_baselines3.make_sb3_env import make_sb3_env, Environme
 from stable_baselines3 import PPO
 
 
-def main(cfg_file, trained_model, test=True):
+def main(cfg_file, trained_model, test=False):
 
     # Read the cfg file
     yaml_file = open(cfg_file)
@@ -36,7 +36,7 @@ def main(cfg_file, trained_model, test=True):
 
     # Load the trained agent
     model_path = os.path.join(model_folder, trained_model)
-    agent = PPO.load('models/models.zip', env=env)
+    agent = PPO.load('/sources/models.zip', env=env)
 
     # Print policy network architecture
     print("Policy architecture:")
