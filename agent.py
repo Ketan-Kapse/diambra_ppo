@@ -36,7 +36,7 @@ def main(cfg_file, trained_model, test=False):
 
     # Load the trained agent
     model_path = os.path.join(model_folder, trained_model)
-    agent = PPO.load('/sources/models.zip', env=env)
+    agent = PPO.load('/sources/model_tuned.zip', env=env)
 
     # Print policy network architecture
     print("Policy architecture:")
@@ -63,7 +63,7 @@ def main(cfg_file, trained_model, test=False):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--cfgFile", type=str, default = 'config.yaml', help="Configuration file")
-    parser.add_argument("--trainedModel", type=str, default="models", help="Model checkpoint")
+    parser.add_argument("--trainedModel", type=str, default="model_finetuned", help="Model checkpoint")
     parser.add_argument("--test", type=int, default=0, help="Test mode")
     opt = parser.parse_args()
     print(opt)
