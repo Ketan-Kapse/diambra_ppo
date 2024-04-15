@@ -36,7 +36,7 @@ def main(cfg_file, trained_model, test=False):
 
     # Load the trained agent
     model_path = os.path.join(model_folder, trained_model)
-    agent = PPO.load('/sources/model_tuned.zip', env=env)
+    agent = PPO.load('/sources/model_tuned2.zip', env=env)
 
     # Print policy network architecture
     print("Policy architecture:")
