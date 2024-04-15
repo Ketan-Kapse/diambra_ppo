@@ -1,6 +1,6 @@
 folders:
   parent_dir: "./"
-  model_name: "model_finetuned"
+  model_name: "model_tuned"
 
 settings:
   game_id: "doapp"
