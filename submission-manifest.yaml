@@ -3,9 +3,9 @@ image: diambra/arena-stable-baselines3-on3.10-bullseye:main
 command:
   - python
   - "/sources/agent.py"
-  - "--cfgFile"
+  - "--cfg-file"
   - "/sources/config.yaml"
-  - "--trainedmodel"
-  - "/sources/models.zip"
+  - "--trained-model"
+  - "/sources/model_tuned2.zip"
 sources:
   .: git+https://Ketan-Kapse:{{.Secrets.token}}@github.com/Ketan-Kapse/diambra_ppo.git#ref=main
